@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Sweet Seven</string>
-    <string name="facebook_app_id">723905778112913</string>
-    <string name="fb_login_protocol_scheme">fb723905778112913</string>
-    <string name="push">Big win!</string>
+    <string name="facebook_app_id">510618772865284</string>
+    <string name="fb_login_protocol_scheme">fb510618772865284</string>
+    <string name="push">Big wins are to come!</string>
 </resources>

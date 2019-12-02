@@ -20,18 +20,18 @@ public class GameplayScene implements Scene {
     private long gameOverTime;
 
     public GameplayScene() {
-        player = new RectPlayer(new Rect(100, 100, 200, 200), Color.rgb(255, 0,0));
+        player = new RectPlayer(new Rect(150, 150, 250, 250), Color.rgb(255, 0,0));
         playerPoint = new Point(Constants.SCREEN_WIDTH/2, 3*Constants.SCREEN_HEIGHT/4);
         player.update(playerPoint);
 
-        obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
+        obstacleManager = new ObstacleManager(200, 350, 75, Color.parseColor("#2C092E"));
     }
 
     public void reset() {
         playerPoint = new Point(Constants.SCREEN_WIDTH/2, 3*Constants.SCREEN_HEIGHT/4);
         player.update(playerPoint);
 
-        obstacleManager = new ObstacleManager(200, 350, 75, Color.BLACK);
+        obstacleManager = new ObstacleManager(200, 350, 75, Color.parseColor("#2C092E"));
 
         movingPlayer = false;
     }
@@ -69,7 +69,7 @@ public class GameplayScene implements Scene {
 
     @Override
     public void draw(Canvas canvas) {
-        canvas.drawColor(Color.WHITE);
+        canvas.drawColor(Color.parseColor("#FCBD00"));
 
         player.draw(canvas);
         obstacleManager.draw(canvas);

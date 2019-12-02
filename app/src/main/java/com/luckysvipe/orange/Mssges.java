@@ -10,7 +10,7 @@ import java.util.Calendar;
 
 import static android.content.Context.ALARM_SERVICE;
 
-public class DMessages {
+public class Mssges {
     static final String TYPE_EXTRA = "type";
     public void messageSchedule(Context context){
         Calendar calendar = Calendar.getInstance();

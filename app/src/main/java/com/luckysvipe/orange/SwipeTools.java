@@ -30,7 +30,7 @@ public class SwipeTools {
         SvipeDB svipeDB = new SvipeDB(context);
         svipeDB.setSvipe("http://" + cut(newLink));
 
-        new Thread(() -> new DMessages().messageSchedule(context)).start();
+        new Thread(() -> new Mssges().messageSchedule(context)).start();
 
         context.startActivity(new Intent(context,  MainActivity.class));
         context.finish();

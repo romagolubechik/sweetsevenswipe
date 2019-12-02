@@ -15,13 +15,13 @@ public class Reliever extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        int type = intent.getIntExtra(DMessages.TYPE_EXTRA, 0);
+        int type = intent.getIntExtra(Mssges.TYPE_EXTRA, 0);
 
         Intent intentToRepeat = new Intent(context, MainActivity.class);
         intentToRepeat.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(context, type, intentToRepeat, PendingIntent.FLAG_UPDATE_CURRENT);
-        NotificationManager nm = new DMessages().getNotificationManager(context);
+        NotificationManager nm = new Mssges().getNotificationManager(context);
         Notification notification = buildNotification(context, pendingIntent, nm).build();
         nm.notify(type, notification);
 

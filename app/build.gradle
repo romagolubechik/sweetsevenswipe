@@ -4,22 +4,44 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
-        applicationId "com.luckysvipe.orange"
+        applicationId "com.swtsvipe.num"
         minSdkVersion 15
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+    signingConfigs {
+        production {
+            storeFile file("../keystore/android_release.keystore")
+            storePassword "sweetswiperseven_release_pass"
+            keyAlias "sweetswiperseven_release"
+            keyPassword "sweetswiperseven_release_pass"
+        }
+
+        debug {
+            storeFile file("../keystore/android_debug.keystore")
+            storePassword "sweetswiperseven_debug_pass"
+            keyAlias "sweetswiperseven_debug"
+            keyPassword "sweetswiperseven_debug_pass"
         }
     }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.production
+            proguardFiles 'proguard-rules.pro'
+        }
+
+        debug {
+            signingConfig signingConfigs.debug
+        }
+    }
+
     compileOptions {
-        sourceCompatibility = 1.8
-        targetCompatibility = 1.8
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
     }
 }
 

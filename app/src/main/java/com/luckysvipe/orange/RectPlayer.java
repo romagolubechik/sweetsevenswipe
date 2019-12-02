@@ -27,14 +27,14 @@ public class RectPlayer implements GameObject {
         this.color = color;
 
         BitmapFactory bf = new BitmapFactory();
-        Bitmap idleImg = bf. decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue);
-        Bitmap walk1 = bf. decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue_walk1);
-        Bitmap walk2 = bf. decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.alienblue_walk2);
+        Bitmap idleImg = bf. decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.sweert);
+        Bitmap walk1 = bf. decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.sweert);
+        Bitmap walk2 = bf. decodeResource(Constants.CURRENT_CONTEXT.getResources(), R.drawable.sweert);
 
-        idle = new Animation(new Bitmap[] {idleImg}, 2);
+        idle = new Animation(new Bitmap[] {idleImg}, 10);
         // oanimation containing a bitmap of only single drawing
         // any amount of time would work as the animation doe snot change for idle
-        walkright = new Animation(new Bitmap[] {walk1, walk2}, 0.5f);
+        walkright = new Animation(new Bitmap[] {walk1, walk2}, 1.5f);
         // animation changes every 0.5f seconds
 
         Matrix m = new Matrix();
@@ -42,7 +42,7 @@ public class RectPlayer implements GameObject {
         walk1 = Bitmap.createBitmap(walk1, 0, 0, walk1.getWidth(), walk1.getHeight(), m, false);
         walk2 = Bitmap.createBitmap(walk2, 0, 0, walk2.getWidth(), walk2.getHeight(), m, false);
 
-        walkleft = new Animation(new Bitmap[] {walk1, walk2}, 0.5f);
+        walkleft = new Animation(new Bitmap[] {walk1, walk2}, 1.5f);
 
         animManager = new AnimationManager(new Animation[] {idle, walkright, walkleft});
     }
